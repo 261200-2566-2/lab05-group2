@@ -5,7 +5,9 @@ public class Character {
     protected double runSpeed;
     protected double atk;
     protected double def;
+    protected double matk;
     protected int lvl;
+    protected String classHero;
 //    Accessory accessory;
 
     public void attack(Character op){
@@ -20,16 +22,25 @@ public class Character {
                 op.maxHp-=atk-op.def;
             }
         }else{
-            System.out.println(this.name+" attacked "+op.name+ "0 damage ");
+            System.out.println(this.name+" attacked "+op.name+ " 0 damage ");
         }
     };
     protected void levelUp(){
-        System.out.println("You level up!");
+        System.out.println(this.name+" level up!");
 //        if(accessory!=null) accessory.levelUp();
         lvl++;
         maxHp=100+(10*lvl);
         maxMana=100+(10*lvl);
         runSpeed= 10 +(2*lvl);
+        if(classHero.equals("Mage")){
+            matk = 20+(2*lvl);
+            atk = 10+(lvl);
+            def = 5+(lvl);
+        }
+        if(classHero.equals("Thief")){
+            atk = 20+(2*lvl);
+            def = 10+(lvl);
+        }
 //        if(accessory!=null)  {
 //            this.runSpeed-=(accessory.lvl);
 //            //buff
@@ -42,8 +53,10 @@ public class Character {
         System.out.println("Mana : "+this.maxMana);
         System.out.println("damage : "+ this.atk);
         System.out.println("def : "+ this.def);
+        System.out.println("magic attack : "+this.matk);
         System.out.println("level : "+this.lvl);
         System.out.println("runSpeed : "+this.runSpeed);
+        System.out.println("Class : "+this.classHero);
 //        if(accessory==null) System.out.println("accessory : none");
 //        else System.out.println("accessory : "+accessory.name);
 
