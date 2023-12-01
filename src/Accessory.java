@@ -1,15 +1,33 @@
 public class Accessory {
-//    String name;
-//    double heavy;
-//    int lvl=0;
-//    boolean abilityOn;
-//    void levelUp(){
-//        lvl++;
-//        heavy*=0.9;
-//    };
-//    void show(){
-//        System.out.println("name : "+name);
-//        System.out.println("damage : "+swordDamage);
-//        System.out.println("level :"+lvl);
-//    };
+    public String name;
+    protected double heavy;
+    protected  int lvl;
+    protected double runSpeed;
+    protected double matk;
+    public String type;
+
+
+    protected Accessory(String name,int lvl,String type){
+        this.name=name;
+        this.type=type;
+        this.lvl=lvl;
+    }
+
+
+
+    public double getMatk(){
+        return matk;
+    }
+
+    public double getHeavy(){
+        return heavy;
+    }
+
+    public double getRunSpeed(){
+        return runSpeed;
+    }
+    public int getLvl(){
+        return lvl;
+    }
+
 }

@@ -1,15 +1,12 @@
+
+
 public class Mage extends Character{
     public Mage(String name,Accessory accessory){
-        this.matk = 20;
-        this.name = name;
-        this.runSpeed=10;
-        this.atk = 10;
-        this.def = 5;
+        super(name,accessory);
+        this.matk+=20;
+        this.atk+= 10;
+        this.def+= 5;
         classHero="Mage";
-//        if(accessory!=null){
-//            this.accessory  deep copy
-              //  buff
-//        }
     }
     public void magicAttack(Character op){
         if(maxMana>=20){
@@ -26,7 +23,7 @@ public class Mage extends Character{
         }else{
             System.out.println(this.name+" : Not enough mana!");
         }
-    };
+    }
 
 
 }

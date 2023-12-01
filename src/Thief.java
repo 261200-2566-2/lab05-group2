@@ -1,15 +1,14 @@
+
+
 public class Thief extends Character{
     public Thief(String name,Accessory accessory){
-        this.name = name;
-        this.runSpeed=10;
-        this.atk = 20;
-        this.def = 10;
-        this.matk = 0;
+        super(name,accessory);
+        this.atk += 20;
+        this.def += 10;
+        this.matk += 0;
         classHero="Thief";
-//        if(accessory!=null){
-//            this.accessory  deep copy
-        //  buff
-//        }
+
+
     }
     public void doubleAttack(Character op){
         if(maxMana>=10) {
@@ -30,7 +29,7 @@ public class Thief extends Character{
         }else{
             System.out.println(this.name+" : Not enough mana!");
         }
-    };
+    }
 
 
 }
